@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About – Stackpack</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <style>
+        /* 复用基础样式，此处简写，最终交付包含完整样式 */
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Inter',sans-serif; background:#fff; color:#111827; line-height:1.5; }
+        .container { max-width:1280px; margin:0 auto; padding:0 2rem; }
+        /* 导航等样式与首页一致，此处省略，实际使用时复制完整 style */
+        nav { position:sticky; top:0; background:rgba(255,255,255,0.95); backdrop-filter:blur(8px); border-bottom:1px solid #e5e7eb; z-index:100; padding:1rem 0; }
+        .nav-container { display:flex; justify-content:space-between; align-items:center; }
+        .logo { font-size:1.5rem; font-weight:700; letter-spacing:-0.02em; text-decoration:none; background:linear-gradient(135deg,#0f172a,#1e293b); -webkit-background-clip:text; background-clip:text; color:transparent; }
+        .nav-links { display:flex; gap:2rem; align-items:center; }
+        .nav-links a { text-decoration:none; color:#4b5563; font-weight:500; transition:color 0.2s; }
+        .nav-links a:hover { color:#0f172a; }
+        .btn-outline-light { background:transparent; border:1px solid #d1d5db; padding:0.5rem 1.25rem; border-radius:40px; font-weight:500; color:#1f2937; text-decoration:none; transition:all 0.2s; }
+        .btn-outline-light:hover { background:#f3f4f6; border-color:#9ca3af; }
+        .btn-primary { background:#0f172a; color:white; padding:0.5rem 1.25rem; border-radius:40px; font-weight:500; text-decoration:none; transition:all 0.2s; border:none; cursor:pointer; display:inline-block; }
+        .btn-primary:hover { background:#1e293b; transform:translateY(-2px); }
+        .about-section { padding:4rem 0; }
+        .founder { display:flex; gap:2rem; align-items:center; margin:3rem 0; flex-wrap:wrap; }
+        .founder-image { width:160px; height:160px; background:#e5e7eb; border-radius:50%; background-size:cover; background-position:center; }
+        .address-block { background:#f9fafb; border-radius:24px; padding:2rem; margin-top:2rem; }
+        footer { padding:3rem 0 2rem; background:#fff; border-top:1px solid #e5e7eb; }
+        .footer-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:2rem; margin-bottom:2rem; }
+        .footer-col h4 { font-size:1rem; margin-bottom:1rem; color:#111827; }
+        .footer-col p, .footer-col a { color:#6b7280; text-decoration:none; display:block; margin-bottom:0.5rem; font-size:0.875rem; }
+        .footer-col a:hover { color:#0f172a; }
+        .copyright { text-align:center; padding-top:2rem; border-top:1px solid #e5e7eb; color:#9ca3af; font-size:0.875rem; }
+        @media (max-width:768px) { .container { padding:0 1rem; } .nav-links { display:none; flex-direction:column; position:absolute; top:70px; left:0; right:0; background:white; padding:1.5rem; border-bottom:1px solid #e5e7eb; } .nav-links.active { display:flex; } .mobile-menu-btn { display:block; background:none; border:none; font-size:1.5rem; cursor:pointer; } }
+        .mobile-menu-btn { display:none; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Stackpack</a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="features.html">Features</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="about.html">About</a>
+                <a href="case-studies.html">Case Studies</a>
+                <a href="request-demo.html" class="btn-outline-light">Request Demo</a>
+                <a href="request-demo.html" class="btn-primary">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="about-section">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h1>About Stackpack</h1>
+                <p style="font-size: 1.2rem; color: #4b5563; margin: 1rem 0;">We believe vendor management should be effortless, transparent, and powered by intelligence — not spreadsheets.</p>
+                <p>Stackpack was born to give finance and operations teams back their time. Our AI works silently in the background, connecting all your tools and contracts, so you always have a complete view of your vendor ecosystem. No more hunting for renewal dates, no more duplicate subscriptions, and no more surprises.</p>
+                
+                <div class="founder">
+                    <div class="founder-image" style="background-image: url('https://randomuser.me/api/portraits/women/68.jpg');"></div>
+                    <div>
+                        <h3>Alexandra Gilbert</h3>
+                        <p>Founder & CEO</p>
+                        <p>Former fintech executive with 15+ years in corporate finance and supply chain management. Alexandra started Stackpack after witnessing how much time finance teams wasted on manual vendor tracking — and how much money they lost due to missed renewal opportunities.</p>
+                    </div>
+                </div>
+
+                <div class="address-block">
+                    <h3>Our Headquarters</h3>
+                    <p>999 Rama I Road, Pathum Wan<br>Bangkok, 10330, Thailand</p>
+                    <p>📞 +66 2 200 6492<br>✉️ support@stackpack.work</p>
+                    <p style="margin-top: 1rem;">We serve customers globally from our Bangkok office. Whether you're in APAC, EMEA, or the Americas, we're here to help.</p>
+                </div>
+
+                <div style="margin-top: 3rem;">
+                    <h3>Join our mission</h3>
+                    <p>We're always looking for passionate people to help us build the future of vendor intelligence. Check our <a href="#">careers page</a> or reach out at careers@stackpack.work.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Stackpack</h4>
+                    <p>999 Rama I Road, Pathum Wan<br>Bangkok, 10330, Thailand</p>
+                    <p>📞 +66 2 200 6492</p>
+                    <p>✉️ support@stackpack.work</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <a href="features.html">Features</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="#">Integrations</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="about.html">About</a>
+                    <a href="case-studies.html">Case Studies</a>
+                    <a href="request-demo.html">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2025 Stackpack. AI‑powered vendor intelligence platform.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        if (mobileBtn) mobileBtn.addEventListener('click', () => navLinks.classList.toggle('active'));
+    </script>
+</body>
+</html>
