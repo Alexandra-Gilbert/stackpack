@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing – Stackpack</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <style>
+        /* 同样复用基础样式，此处简写，最终交付将包含完整样式 */
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Inter',sans-serif; background:#fff; color:#111827; line-height:1.5; }
+        .container { max-width:1280px; margin:0 auto; padding:0 2rem; }
+        /* 导航等样式与首页一致，为节省篇幅省略，实际使用时复制首页 style 块 */
+        nav { position:sticky; top:0; background:rgba(255,255,255,0.95); backdrop-filter:blur(8px); border-bottom:1px solid #e5e7eb; z-index:100; padding:1rem 0; }
+        .nav-container { display:flex; justify-content:space-between; align-items:center; }
+        .logo { font-size:1.5rem; font-weight:700; letter-spacing:-0.02em; text-decoration:none; background:linear-gradient(135deg,#0f172a,#1e293b); -webkit-background-clip:text; background-clip:text; color:transparent; }
+        .nav-links { display:flex; gap:2rem; align-items:center; }
+        .nav-links a { text-decoration:none; color:#4b5563; font-weight:500; transition:color 0.2s; }
+        .nav-links a:hover { color:#0f172a; }
+        .btn-outline-light { background:transparent; border:1px solid #d1d5db; padding:0.5rem 1.25rem; border-radius:40px; font-weight:500; color:#1f2937; text-decoration:none; transition:all 0.2s; }
+        .btn-outline-light:hover { background:#f3f4f6; border-color:#9ca3af; }
+        .btn-primary { background:#0f172a; color:white; padding:0.5rem 1.25rem; border-radius:40px; font-weight:500; text-decoration:none; transition:all 0.2s; border:none; cursor:pointer; display:inline-block; }
+        .btn-primary:hover { background:#1e293b; transform:translateY(-2px); }
+        .pricing-section { padding:4rem 0; }
+        .pricing-grid { display:flex; justify-content:center; gap:2rem; flex-wrap:wrap; }
+        .pricing-card { background:#fff; border:1px solid #e5e7eb; border-radius:32px; padding:2rem; width:100%; max-width:380px; transition:all 0.2s; }
+        .pricing-card:hover { transform:translateY(-4px); box-shadow:0 20px 25px -12px rgba(0,0,0,0.1); }
+        .pricing-card h3 { font-size:1.5rem; margin-bottom:1rem; }
+        .price { font-size:3rem; font-weight:800; color:#0f172a; margin:1rem 0; }
+        .price span { font-size:1rem; font-weight:400; color:#6b7280; }
+        .pricing-features { list-style:none; margin:2rem 0; }
+        .pricing-features li { margin-bottom:0.75rem; display:flex; align-items:center; gap:0.5rem; }
+        .pricing-features li::before { content:"✓"; color:#0f172a; font-weight:bold; }
+        .btn-block { display:block; text-align:center; margin-top:1.5rem; }
+        .featured { border:2px solid #0f172a; background:#f9fafb; }
+        footer { padding:3rem 0 2rem; background:#fff; border-top:1px solid #e5e7eb; }
+        .footer-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:2rem; margin-bottom:2rem; }
+        .footer-col h4 { font-size:1rem; margin-bottom:1rem; color:#111827; }
+        .footer-col p, .footer-col a { color:#6b7280; text-decoration:none; display:block; margin-bottom:0.5rem; font-size:0.875rem; }
+        .footer-col a:hover { color:#0f172a; }
+        .copyright { text-align:center; padding-top:2rem; border-top:1px solid #e5e7eb; color:#9ca3af; font-size:0.875rem; }
+        @media (max-width:768px) { .container { padding:0 1rem; } .nav-links { display:none; flex-direction:column; position:absolute; top:70px; left:0; right:0; background:white; padding:1.5rem; border-bottom:1px solid #e5e7eb; } .nav-links.active { display:flex; } .mobile-menu-btn { display:block; background:none; border:none; font-size:1.5rem; cursor:pointer; } }
+        .mobile-menu-btn { display:none; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Stackpack</a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="features.html">Features</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="about.html">About</a>
+                <a href="case-studies.html">Case Studies</a>
+                <a href="request-demo.html" class="btn-outline-light">Request Demo</a>
+                <a href="request-demo.html" class="btn-primary">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pricing-section">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h1>Simple, transparent pricing</h1>
+                <p style="color: #6b7280; max-width: 600px; margin: 1rem auto;">Pay only for the vendors you manage. Unlimited seats. No hidden fees.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Startup</h3>
+                    <div class="price">$300<span>/month</span></div>
+                    <p>Includes core platform + first 100 vendors</p>
+                    <ul class="pricing-features">
+                        <li>AI Assistant</li>
+                        <li>Vendor Stack dashboard</li>
+                        <li>Unlimited seats</li>
+                        <li>Email support</li>
+                        <li>5-minute setup</li>
+                    </ul>
+                    <a href="request-demo.html" class="btn-primary btn-block">Start free trial</a>
+                </div>
+                <div class="pricing-card featured">
+                    <h3>Scale</h3>
+                    <div class="price">$300<span> + $100 per 100 vendors</span></div>
+                    <p>For growing teams with more vendors</p>
+                    <ul class="pricing-features">
+                        <li>Everything in Startup</li>
+                        <li>Priority support</li>
+                        <li>Custom contract extraction</li>
+                        <li>API access</li>
+                        <li>Advanced analytics</li>
+                    </ul>
+                    <a href="request-demo.html" class="btn-primary btn-block">Contact sales</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <div class="price">Custom</div>
+                    <p>Tailored for large organizations</p>
+                    <ul class="pricing-features">
+                        <li>Dedicated account manager</li>
+                        <li>SLA guarantees</li>
+                        <li>On-premise or private cloud</li>
+                        <li>Custom integrations</li>
+                        <li>SSO & advanced security</li>
+                    </ul>
+                    <a href="request-demo.html" class="btn-primary btn-block">Contact us</a>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 4rem;">
+                <p class="text-muted">All plans include a 14-day free trial. No credit card required.</p>
+                <p style="margin-top: 0.5rem;">💡 <strong>ROI in one week</strong> – most customers recover their investment within the first month through time savings and better contract negotiations.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Stackpack</h4>
+                    <p>999 Rama I Road, Pathum Wan<br>Bangkok, 10330, Thailand</p>
+                    <p>📞 +66 2 200 6492</p>
+                    <p>✉️ support@stackpack.work</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <a href="features.html">Features</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="#">Integrations</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="about.html">About</a>
+                    <a href="case-studies.html">Case Studies</a>
+                    <a href="request-demo.html">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2025 Stackpack. AI‑powered vendor intelligence platform.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        if (mobileBtn) mobileBtn.addEventListener('click', () => navLinks.classList.toggle('active'));
+    </script>
+</body>
+</html>
