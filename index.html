@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackpack – Vendor Intelligence Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #111827;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid #e5e7eb;
+            z-index: 100;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            text-decoration: none;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4b5563;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #0f172a;
+        }
+
+        .btn-outline-light {
+            background: transparent;
+            border: 1px solid #d1d5db;
+            padding: 0.5rem 1.25rem;
+            border-radius: 40px;
+            font-weight: 500;
+            color: #1f2937;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-outline-light:hover {
+            background: #f3f4f6;
+            border-color: #9ca3af;
+        }
+
+        .btn-primary {
+            background: #0f172a;
+            color: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 40px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: #1e293b;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid #0f172a;
+            color: #0f172a;
+            padding: 0.75rem 1.5rem;
+            border-radius: 40px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-secondary:hover {
+            background: #f1f5f9;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 5rem 0 4rem;
+            text-align: center;
+            background: linear-gradient(to bottom, #f9fafb, #ffffff);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #0f172a, #2d3a5e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #4b5563;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Stats */
+        .stats {
+            padding: 4rem 0;
+            background: #f9fafb;
+            border-top: 1px solid #e5e7eb;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #0f172a;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #6b7280;
+            font-weight: 500;
+        }
+
+        /* Features Preview */
+        .features-preview {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #6b7280;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        .feature-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 24px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -12px rgba(0,0,0,0.1);
+            border-color: #cbd5e1;
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .card p {
+            color: #6b7280;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 5rem 0;
+            background: #f9fafb;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 24px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .testimonial-text {
+            font-size: 1rem;
+            color: #374151;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: #111827;
+        }
+
+        .testimonial-title {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+
+        /* CTA */
+        .cta {
+            padding: 5rem 0;
+            text-align: center;
+            background: #0f172a;
+            color: white;
+        }
+
+        .cta h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta p {
+            color: #cbd5e1;
+            margin-bottom: 2rem;
+        }
+
+        .cta .btn-primary {
+            background: white;
+            color: #0f172a;
+        }
+
+        .cta .btn-primary:hover {
+            background: #e2e8f0;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 0 2rem;
+            background: #ffffff;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: #111827;
+        }
+
+        .footer-col p, .footer-col a {
+            color: #6b7280;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .footer-col a:hover {
+            color: #0f172a;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #e5e7eb;
+            color: #9ca3af;
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                gap: 1rem;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 1.5rem;
+                border-bottom: 1px solid #e5e7eb;
+                box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .mobile-menu-btn {
+                display: block;
+                background: none;
+                border: none;
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+            .btn-outline-light, .btn-primary {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        .mobile-menu-btn {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Stackpack</a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="features.html">Features</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="about.html">About</a>
+                <a href="case-studies.html">Case Studies</a>
+                <a href="request-demo.html" class="btn-outline-light">Request Demo</a>
+                <a href="request-demo.html" class="btn-primary">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>AI that silently manages your vendors, <br>spend, and contracts.</h1>
+                <p>Stackpack connects all your tools, contracts, and renewals — ensuring nothing falls through the cracks. No more spreadsheets. Setup in 5 minutes, ROI in one week.</p>
+                <div class="hero-buttons">
+                    <a href="request-demo.html" class="btn-primary" style="padding: 0.75rem 1.5rem;">Start Free Trial</a>
+                    <a href="features.html" class="btn-secondary">Explore Features</a>
+                </div>
+                <div style="margin-top: 2rem; font-size: 0.875rem; color: #6b7280;">✓ Unlimited seats  ✓ 5‑minute setup  ✓ Pay‑as‑you‑grow</div>
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div><div class="stat-number">20h</div><div class="stat-label">saved per team member / month</div></div>
+                    <div><div class="stat-number">21%</div><div class="stat-label">saved on first contract renewal</div></div>
+                    <div><div class="stat-number">100%</div><div class="stat-label">renewal compliance & visibility</div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features-preview">
+            <div class="container">
+                <h2 class="section-title">Intelligent vendor management, in the background</h2>
+                <p class="section-subtitle">We connect your financial tools and contracts, then work silently to keep you in control.</p>
+                <div class="feature-cards">
+                    <div class="card">
+                        <div class="card-icon">🤖</div>
+                        <h3>AI Assistant</h3>
+                        <p>Instant answers to finance‑specific prompts: renewal risks, duplicate vendors, spend insights — all in seconds.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">📊</div>
+                        <h3>Vendor Stack</h3>
+                        <p>A single, organized view of your entire vendor ecosystem. Sort, analyze, and manage with zero guesswork.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🔌</div>
+                        <h3>Native Integrations</h3>
+                        <p>Connects with your finance apps — QuickBooks, Xero, NetSuite — automatically, securely, without setup headaches.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <div class="container">
+                <h2 class="section-title">Trusted by finance & operations leaders</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">“Stackpack means we don’t have to cross our fingers every quarter.”</p>
+                        <p class="testimonial-author">Brandon Lee</p>
+                        <p class="testimonial-title">Accounting Manager, Bizzycar</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">“Vendor buying is decentralized — but it comes back to finance to manage health and reporting. Stackpack solves that problem.”</p>
+                        <p class="testimonial-author">Arthur Wei</p>
+                        <p class="testimonial-title">Controller, Stride Health</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">“It streamlined our contract management and made expense tracking effortless.”</p>
+                        <p class="testimonial-author">Nathaniel Robinson</p>
+                        <p class="testimonial-title">CEO, Trustworthy</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <h2>Ready to take full control?</h2>
+                <p>Join hundreds of finance teams that have eliminated spreadsheet chaos and saved time & money.</p>
+                <a href="request-demo.html" class="btn-primary" style="padding: 0.75rem 1.5rem;">Request a demo →</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Stackpack</h4>
+                    <p>999 Rama I Road, Pathum Wan<br>Bangkok, 10330, Thailand</p>
+                    <p>📞 +66 2 200 6492</p>
+                    <p>✉️ support@stackpack.work</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <a href="features.html">Features</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="#">Integrations</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="about.html">About</a>
+                    <a href="case-studies.html">Case Studies</a>
+                    <a href="request-demo.html">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2025 Stackpack. AI‑powered vendor intelligence platform.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        if (mobileBtn) {
+            mobileBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
+    </script>
+</body>
+</html>
